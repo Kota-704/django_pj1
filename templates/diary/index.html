@@ -8,5 +8,7 @@
   <body>
     <h1>Kotaの日記</h1>
     <p>{{ datetime_now }}</p>
+    <br />
+    <a href="{% url 'diary:page_create' %}">日記を書く</a>
   </body>
 </html>
