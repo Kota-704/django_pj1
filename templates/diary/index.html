@@ -5,5 +5,9 @@
 <a href="{% url 'diary:page_create' %}">日記を書く</a>
 <br />
 <a href="{% url 'diary:page_list' %}">ページ一覧</a>
-
+<br />
+<form action="{% url 'accounts:logout' %}" method="post">
+  {% csrf_token %}
+  <button type="submit">ログアウト</button>
+</form>
 {% endblock %}

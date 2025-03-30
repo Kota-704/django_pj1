@@ -1,5 +1,5 @@
 from django.db import models
-
+from pathlib import Path
 import uuid
 
 
@@ -14,3 +14,9 @@ class Page(models.Model):
 
   def __str__(self):
     return self.title
+
+  def delete(self, *args, **kwargs):
+    picture =self.picture
+    super().delete(*args, **kwargs)
+    if picture:
+      Path(picture.path).unlink(missing_ok=True)
